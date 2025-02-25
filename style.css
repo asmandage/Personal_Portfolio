@@ -136,7 +136,7 @@ nav a:hover {
   .social ul li, svg {
     display: block;
     margin: 5px;
-    background: rgba(0, 0, 0, 0.36);
+    background: transperant;
     width: 300px;
     text-align: right;
     padding: 10px;
@@ -168,10 +168,7 @@ nav a:hover {
     color:#6e5494;
     box-shadow: 2px 2px 2px #5F6368;
   }
-  .social ul li:hover .Mail{
-    color:#D14836;
-    box-shadow: 2px 2px 2px #5F6368;
-  }
+ 
   .social ul li:hover .fa-whatsapp{
     color:rgb(76, 251, 76);
     box-shadow: 2px 2px 2px #5F6368;
