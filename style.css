@@ -383,7 +383,7 @@ nav a:hover {
   }
   
   .logo .circle4 {
-    width: 80px;
+/*     width: 80px; */
     transform: translate3d(0, 0, 80px);
     top: 23px;
     right: 23px;
@@ -391,7 +391,7 @@ nav a:hover {
   }
   
   .logo .circle5 {
-    width: 50px;
+/*     width: 50px; */
     transform: translate3d(0, 0, 100px);
     top: 30px;
     right: 30px;
