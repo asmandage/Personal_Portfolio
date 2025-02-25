@@ -27,12 +27,12 @@ nav {
   width: 96.7vw;
 
 }
-.bi-stack{ 
+.stack{ 
   font-size: 50px;
   margin-left: 3rem;
   transition-duration: 1s;
 }
-.bi-stack:hover{
+.stack:hover{
   font-size: 52px;
   color: #0056b3;
   transition: 1s;
@@ -167,7 +167,7 @@ nav a:hover {
     color:#6e5494;
     box-shadow: 2px 2px 2px #5F6368;
   }
-  .social ul li:hover .bi-envelope-at{
+  .social ul li:hover .Mail{
     color:#D14836;
     box-shadow: 2px 2px 2px #5F6368;
   }
