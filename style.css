@@ -27,14 +27,14 @@ nav {
   width: 96.7vw;
 
 }
-.stack { 
+.stack svg { 
   width: 80px; 
   height: 80px; 
   margin-left: 3rem;
   font-size: 24px; 
 }
 
-.stack:hover {
+.stack svg:hover {
   font-size: 60px; 
   color: #0056b3;
   transform: scale(1.2); 
