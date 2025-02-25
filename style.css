@@ -136,7 +136,7 @@ nav a:hover {
   .social ul li, svg {
     display: block;
     margin: 5px;
-    background: rgba(0, 0, 0, 0.36);
+    background: transparent;
     width: 300px;
     text-align: right;
     padding: 10px;
