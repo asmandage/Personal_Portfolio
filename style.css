@@ -28,12 +28,12 @@ nav {
 
 }
 .stack{ 
-  font-size: 50px;
+  font-size: 80px;
   margin-left: 3rem;
   transition-duration: 1s;
 }
 .stack:hover{
-  font-size: 52px;
+  font-size: 82px;
   color: #0056b3;
   transition: 1s;
 }
@@ -132,7 +132,7 @@ nav a:hover {
     padding: 0px;
     transform: translate(-270px, 0);
   }
-  .social ul li {
+  .social ul li, svg {
     display: block;
     margin: 5px;
     background: rgba(0, 0, 0, 0.36);
