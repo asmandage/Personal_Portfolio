@@ -28,12 +28,13 @@ nav {
 
 }
 .stack{ 
-  font-size: 80px;
+  width: 50px;
+  height: 50px;
   margin-left: 3rem;
   transition-duration: 1s;
 }
 .stack:hover{
-  font-size: 82px;
+  font-size: 52px;
   color: #0056b3;
   transition: 1s;
 }
