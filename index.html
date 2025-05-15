@@ -5,389 +5,343 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-   
 </head>
 <body>
-  <!--NavBar-->
+  <!-- Navbar -->
   <nav class="navbar" id="navbar">
     <span class="myname">
-      <span class="bi-stack"></span>
-  </span>
-  
-      <span><a href="#" class="icon" onclick="toggleNavbar()">☰</a> </span>
-      <span class="Alink">
-      <span> <a href="#contact">Contact</a></span>
-      <span><a href="#about">About</a></span>
-      <span> <a href="#sk">Skills</a></span>
-      <span> <a href="#pr">Projects</a></span>
-      <span class="Contact"><a href="#Sub-title">Home</a></span>
-      </span>
-</nav>
+      <i class="fas fa-code"></i> Aniket
+    </span>
+    <span class="icon" onclick="toggleNavbar()">☰</span>
+    <span class="Alink">
+      <span><a href="#Sub-title" onclick="closeNavbar()">Home</a></span>
+      <span><a href="#pr" onclick="closeNavbar()">Projects</a></span>
+      <span><a href="#sk" onclick="closeNavbar()">Skills</a></span>
+      <span><a href="#about" onclick="closeNavbar()">About</a></span>
+      <span><a href="#contact" onclick="closeNavbar()">Contact</a></span>
+    </span>
+  </nav>
 
-<!--Some Details -->
-<div class="Sub-title" id="Sub-title">
-  <h1 id="hello">Hey,&nbsp; I'm &nbsp;Aniket &nbsp;Mandage</h1>
-  <p id="details">A Frontend focused Web Developer building the Frontend of Websites and 
+  <!-- Sub-title -->
+  <div class="Sub-title" id="Sub-title">
+    <h1 id="hello">Hey, I'm Aniket Mandage</h1>
+    <p id="details">A Frontend focused Web Developer building the Frontend of Websites and 
       Web Applications that leads to the success of the overall product</p>   
-</div>
+  </div>
 
-<div id="pr"></div>
-
-<!--Projects-->
-<div class="waterflow" id="waterflow">
-  <div class="content">
+  <!-- Projects -->
+  <div class="waterflow" id="pr">
+    <div class="content">
       <h2>Projects</h2>
       <h2>Projects</h2>
     </div>
-</div>
-<div class="ProjectBar">
- <!-- Calculator -->
-  <div class="Projects">
-    <div class="parent">
-      <div class="deatils-project"> </div>  
-      <div class="card">
+  </div>
+  <div class="ProjectBar">
+    <!-- Calculator -->
+    <div class="Projects">
+      <div class="parent">
+        <div class="card">
           <div class="logo">
-              <span class="circle circle1"></span>
-              <span class="circle circle2"></span>
-              <span class="circle circle3"></span>
-              <span class="circle circle4"></span>
-              <span class="circle circle5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-dashed-bottom-code"><path d="m10 10-2 2 2 2"/><path d="m14 14 2-2-2-2"/><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2"/><path d="M9 21h1"/><path d="M14 21h1"/></svg>
-              </span>
+            <span class="circle circle1"></span>
+            <span class="circle circle2"></span>
+            <span class="circle circle3"></span>
+            <span class="circle circle4"></span>
+            <span class="circle circle5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-dashed-bottom-code"><path d="m10 10-2 2 2 2"/><path d="m14 14 2-2-2-2"/><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2"/><path d="M9 21h1"/><path d="M14 21h1"/></svg>
+            </span>
           </div>
-      
           <div class="glass"></div>
           <div class="content">
-              <span class="title">Calculator</span>
-              <span class="text">Aniket Mandage's Calculator Project, built using HTML, CSS, and JavaScript, performs basic math operations with a clean and responsive design. It highlights Aniket's ability to create functional and user-friendly web applications.for visit My Calculator Project click on <b><i>Below button</i></b></span><br>
-              <a href="https://asmandage.github.io/calculator/">Click Here</a>
+            <span class="title">Calculator</span>
+            <span class="text">Aniket Mandage's Calculator Project, built using HTML, CSS, and JavaScript, performs basic math operations with a clean and responsive design.</span><br>
+            <a href="https://asmandage.github.io/calculator/">Click Here</a>
           </div>
-      </div>
-    </div>
-
-  </div>
-<!-- Resume Builder -->
-  <div class="Projects">
-    <div class="parent">
-      <div class="deatils-project"> </div>  
-      <div class="card">
-          <div class="logo">
-              <span class="circle circle1"></span>
-              <span class="circle circle2"></span>
-              <span class="circle circle3"></span>
-              <span class="circle circle4"></span>
-              <span class="circle circle5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-dashed-bottom-code"><path d="m10 10-2 2 2 2"/><path d="m14 14 2-2-2-2"/><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2"/><path d="M9 21h1"/><path d="M14 21h1"/></svg>
-              </span>
-          </div>
-      
-          <div class="glass"></div>
-          <div class="content">
-              <span class="title">Resume Builder</span>
-              <span class="text">Aniket Mandage's Resume Builder Website
-                A user-friendly web app designed for creating professional resumes with ease. Built using HTML, CSS, JavaScript, and C#.NET, it feature templates, real-time preview, and PDF export, highlighting Aniket's Full Stack Development skills.</span> <br>
-              <a href="https://asmandage.github.io/ResumeBuilderClone/">Click Here</a>
-          </div>
-      </div>
-    </div>
-  </div>
-  <!-- TIC TAC TOE Game -->
-  <div class="Projects">
-    <div class="parent">
-      <div class="deatils-project"> </div>  
-      <div class="card">
-          <div class="logo">
-              <span class="circle circle1"></span>
-              <span class="circle circle2"></span>
-              <span class="circle circle3"></span>
-              <span class="circle circle4"></span>
-              <span class="circle circle5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-dashed-bottom-code"><path d="m10 10-2 2 2 2"/><path d="m14 14 2-2-2-2"/><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2"/><path d="M9 21h1"/><path d="M14 21h1"/></svg>
-              </span>
-          </div>
-      
-          <div class="glass"></div>
-          <div class="content">
-              <span class="title">Tic-Tac-Toe Game</span>
-              <span class="text">A fun and interactive two-player game built with HTML, CSS, and JavaScript, featuring a responsive design and real-time winner detection. This project demonstrates Aniket's creativity and front-end development skills, ensuring a seamless user experience.</span><br>
-              <a href="https://asmandage.github.io/Tic-Tac-Toe-Web/">Click Here</a>
-          </div>
-      </div>
-    </div>
-  </div>
-  <!-- ROCK PAPer SCISSOR GAMe -->
-  <div class="Projects">
-    <div class="parent">
-      <div class="deatils-project"> </div>  
-      <div class="card">
-          <div class="logo">
-              <span class="circle circle1"></span>
-              <span class="circle circle2"></span>
-              <span class="circle circle3"></span>
-              <span class="circle circle4"></span>
-              <span class="circle circle5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-dashed-bottom-code"><path d="m10 10-2 2 2 2"/><path d="m14 14 2-2-2-2"/><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2"/><path d="M9 21h1"/><path d="M14 21h1"/></svg>
-              </span>
-          </div>
-      
-          <div class="glass"></div>
-          <div class="content">
-              <span class="title">ROCK-PAPER-SCI.</span>
-              <span class="text">An engaging Rock Paper Scissors game developed using HTML, CSS, and JavaScript. It features a sleek UI, interactive gameplay against the computer, and real-time winner announcements. This project showcases Aniket's skills in creating dynamic web applications.</span><br>
-              <a href="https://asmandage.github.io/RockPaperScissor/">Click Here</a>
-          </div>
-      </div>
-    </div>
-
-  </div>
-  <!-- Hotel Management System -->
-  <div class="Projects">
-    <div class="parent">
-      <div class="deatils-project"> </div>  
-      <div class="card">
-          <div class="logo">
-              <span class="circle circle1"></span>
-              <span class="circle circle2"></span>
-              <span class="circle circle3"></span>
-              <span class="circle circle4"></span>
-              <span class="circle circle5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-dashed-bottom-code"><path d="m10 10-2 2 2 2"/><path d="m14 14 2-2-2-2"/><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2"/><path d="M9 21h1"/><path d="M14 21h1"/></svg>
-              </span>
-          </div>
-      
-          <div class="glass"></div>
-          <div class="content">
-              <span class="title">Hotel Management</span>
-              <span class="text">A Hotel Management application built with ASP.NET, ADO.NET, C#, CSS, and MS SQL Server. It includes features like room booking, customer management, and billing, showcasing Aniket's expertise in backend development and database management.</span><br>
-              <a href="#">Click Here</a>
-          </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="Projects">
-    <div class="parent">
-      <div class="deatils-project"> </div>  
-      <div class="card">
-          <div class="logo">
-              <span class="circle circle1"></span>
-              <span class="circle circle2"></span>
-              <span class="circle circle3"></span>
-              <span class="circle circle4"></span>
-              <span class="circle circle5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-dashed-bottom-code"><path d="m10 10-2 2 2 2"/><path d="m14 14 2-2-2-2"/><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2"/><path d="M9 21h1"/><path d="M14 21h1"/></svg>
-              </span>
-          </div>
-      
-          <div class="glass"></div>
-          <div class="content">
-              <span class="title">Personal Portfolio</span>
-              <span class="text">A responsive and visually appealing personal portfolio website built with HTML, CSS, and JavaScript. It highlights Aniket's skills, projects, and achievements, providing a seamless experience for visitors to explore his work and expertise.</span><br>
-              <a href="https://asmandage.github.io/Personal_Portfolio/">Click Here</a>
-          </div>
-      </div>
-    </div>
-
-  </div>
-
-</div>
-
-
-
-<!-- Skills Progressor -->
-<div id="sk"><br><br></div>
-<h2 id="skills">Skills</h2>
-<div class="skcontainer">
-  
-  <!-- Skills Section -->
-  <div class="skills-section">
-    <div class="skills-container">
-      <div class="skill">
-        <div class="skill-progress">
-          <div class="outer-circle" data-progress="75">
-            <div class="inner-circle">
-              <span class="counter">0%</span>
-            </div>
-          </div>
-          <span class="Lang">C#.NET</span>
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill-progress">
-          <div class="outer-circle" data-progress="60">
-            <div class="inner-circle">
-              <span class="counter">0%</span>
-            </div>
-          </div>
-          <span class="Lang">&nbsp;&nbsp;&nbsp;SQL</span>
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill-progress">
-          <div class="outer-circle" data-progress="90">
-            <div class="inner-circle">
-              <span class="counter">0%</span>
-            </div>
-          </div>
-          <span class="Lang">&nbsp;HTML</span>
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill-progress">
-          <div class="outer-circle" data-progress="85">
-            <div class="inner-circle">
-              <span class="counter">0%</span>
-            </div>
-          </div>
-          <span class="Lang">ASP.NET</span>
         </div>
       </div>
     </div>
+    <!-- Resume Builder -->
+    <div class="Projects">
+      <div class="parent">
+        <div class="card">
+          <div class="logo">
+            <span class="circle circle1"></span>
+            <span class="circle circle2"></span>
+            <span class="circle circle3"></span>
+            <span class="circle circle4"></span>
+            <span class="circle circle5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-dashed-bottom-code"><path d="m10 10-2 2 2 2"/><path d="m14 14 2-2-2-2"/><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2"/><path d="M9 21h1"/><path d="M14 21h1"/></svg>
+            </span>
+          </div>
+          <div class="glass"></div>
+          <div class="content">
+            <span class="title">Resume Builder</span>
+            <span class="text">A user-friendly web app for creating professional resumes with templates, real-time preview, and PDF export.</span><br>
+            <a href="https://asmandage.github.io/ResumeBuilderClone/">Click Here</a>
+          </div>
+        </div>
+      </div>
     </div>
-
-  <!-- .NET Topics Section -->
-  <div class="dotnet-section">
-    <h2>Full Stack DOT NET D.</h2>
-    <ul>
-      <li>C#.NET</li>
-      <li>ASP.NET</li>
-      <li>MVC</li>
-      <li>ADO.NET</li>
-      <li>Angular</li>
-      <li>LINQ</li>
-      <li>Web API</li>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>SQL Server</li>
-      <li>MySQL</li>
-    </ul>
+    <!-- Tic-Tac-Toe -->
+    <div class="Projects">
+      <div class="parent">
+        <div class="card">
+          <div class="logo">
+            <span class="circle circle1"></span>
+            <span class="circle circle2"></span>
+            <span class="circle circle3"></span>
+            <span class="circle circle4"></span>
+            <span class="circle circle5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-dashed-bottom-code"><path d="m10 10-2 2 2 2"/><path d="m14 14 2-2-2-2"/><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2"/><path d="M9 21h1"/><path d="M14 21h1"/></svg>
+            </span>
+          </div>
+          <div class="glass"></div>
+          <div class="content">
+            <span class="title">Tic-Tac-Toe Game</span>
+            <span class="text">A fun two-player game with responsive design and real-time winner detection.</span><br>
+            <a href="https://asmandage.github.io/Tic-Tac-Toe-Web/">Click Here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Rock Paper Scissors -->
+    <div class="Projects">
+      <div class="parent">
+        <div class="card">
+          <div class="logo">
+            <span class="circle circle1"></span>
+            <span class="circle circle2"></span>
+            <span class="circle circle3"></span>
+            <span class="circle circle4"></span>
+            <span class="circle circle5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-dashed-bottom-code"><path d="m10 10-2 2 2 2"/><path d="m14 14 2-2-2-2"/><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2"/><path d="M9 21h1"/><path d="M14 21h1"/></svg>
+            </span>
+          </div>
+          <div class="glass"></div>
+          <div class="content">
+            <span class="title">Rock-Paper-Scissors</span>
+            <span class="text">An engaging game with a sleek UI and interactive gameplay against the computer.</span><br>
+            <a href="https://asmandage.github.io/RockPaperScissor/">Click Here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hotel Management -->
+    <div class="Projects">
+      <div class="parent">
+        <div class="card">
+          <div class="logo">
+            <span class="circle circle1"></span>
+            <span class="circle circle2"></span>
+            <span class="circle circle3"></span>
+            <span class="circle circle4"></span>
+            <span class="circle circle5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-dashed-bottom-code"><path d="m10 10-2 2 2 2"/><path d="m14 14 2-2-2-2"/><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2"/><path d="M9 21h1"/><path d="M14 21h1"/></svg>
+            </span>
+          </div>
+          <div class="glass"></div>
+          <div class="content">
+            <span class="title">Hotel Management</span>
+            <span class="text">A full-stack application with room booking, customer management, and billing features.</span><br>
+            <a href="#">Click Here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Personal Portfolio -->
+    <div class="Projects">
+      <div class="parent">
+        <div class="card">
+          <div class="logo">
+            <span class="circle circle1"></span>
+            <span class="circle circle2"></span>
+            <span class="circle circle3"></span>
+            <span class="circle circle4"></span>
+            <span class="circle circle5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-dashed-bottom-code"><path d="m10 10-2 2 2 2"/><path d="m14 14 2-2-2-2"/><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2"/><path d="M9 21h1"/><path d="M14 21h1"/></svg>
+            </span>
+          </div>
+          <div class="glass"></div>
+          <div class="content">
+            <span class="title">Personal Portfolio</span>
+            <span class="text">A responsive portfolio showcasing my skills, projects, and achievements.</span><br>
+            <a href="https://asmandage.github.io/Personal_Portfolio/">Click Here</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<br><br><br><br><br>
-<!--About Me-->
-<section id="about">
-  <h2>About Me</h2>
-  
-  <div class="about-container">
-    <div class="info">
-      <h3>Name:</h3>
-      <p>Aniket Sanjay Mandage</p>
-      <h3>Role:</h3>
-      <p>Full Stack .NET Expert</p>
-      <h3>Location:</h3>
-      <p>Ahmadnagar, Maharashtra</p>
-    </div>
 
-    <div class="education">
-      <h3>Education:</h3>
+  <!-- Skills -->
+  <div id="sk"></div>
+  <h2 id="skills">Skills</h2>
+  <div class="skcontainer">
+    <div class="skills-section">
+      <div class="skills-container">
+        <div class="skill">
+          <div class="skill-progress">
+            <div class="outer-circle" data-progress="75">
+              <div class="inner-circle">
+                <span class="counter">0%</span>
+              </div>
+            </div>
+            <span class="Lang">C#.NET</span>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-progress">
+            <div class="outer-circle" data-progress="60">
+              <div class="inner-circle">
+                <span class="counter">0%</span>
+              </div>
+            </div>
+            <span class="Lang">SQL</span>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-progress">
+            <div class="outer-circle" data-progress="90">
+              <div class="inner-circle">
+                <span class="counter">0%</span>
+              </div>
+            </div>
+            <span class="Lang">HTML</span>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-progress">
+            <div class="outer-circle" data-progress="85">
+              <div class="inner-circle">
+                <span class="counter">0%</span>
+              </div>
+            </div>
+            <span class="Lang">ASP.NET</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dotnet-section">
+      <h2>Full Stack DOT NET D.</h2>
       <ul>
-        <li>10th Grade: New English School, Rehekuri (MH State Board), 71.20% (2018)</li>
-        <li>12th Grade: Shri Amarnath Vidyalay Karjat (HSC Board), 65.40% (2020)</li>
-        <li>Bachelor's: Dada Patil Mahavidyalay Karjat, SPPU, 59.54%</li>
-        <li>Completed .NET Fullstack Course from Naresh IT Hyderabad</li>
+        <li>C#.NET</li>
+        <li>ASP.NET</li>
+        <li>MVC</li>
+        <li>ADO.NET</li>
+        <li>Angular</li>
+        <li>LINQ</li>
+        <li>Web API</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>SQL Server</li>
+        <li>MySQL</li>
       </ul>
     </div>
   </div>
 
-  <div class="skills">
-    <h3>Technical Skills</h3>
-    <ul>
-      <li><strong>.NET</strong>: C#.NET, ASP.NET MVC, Web API, ADO.NET</li>
-      <li><strong>Database</strong>: SQL Server, Entity Framework, LINQ</li>
-      <li><strong>UI Technologies</strong>: HTML, CSS, JavaScript, React JS, Bootstrap</li>
-    </ul>
-  </div>
+  <!-- About Me -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <div class="info">
+        <h3>Name:</h3>
+        <p>Aniket Sanjay Mandage</p>
+        <h3>Role:</h3>
+        <p>Full Stack .NET Expert</p>
+        <h3>Location:</h3>
+        <p>Ahmadnagar, Maharashtra</p>
+      </div>
+      <div class="education">
+        <h3>Education:</h3>
+        <ul>
+          <li>10th Grade: New English School, Rehekuri (MH State Board), 71.20% (2018)</li>
+          <li>12th Grade: Shri Amarnath Vidyalay Karjat (HSC Board), 65.40% (2020)</li>
+          <li>Bachelor's: Dada Patil Mahavidyalay Karjat, SPPU, 59.54%</li>
+          <li>Completed .NET Fullstack Course from Naresh IT Hyderabad</li>
+        </ul>
+      </div>
+    </div>
+    <div class="skills">
+      <h3>Technical Skills</h3>
+      <ul>
+        <li><strong>.NET</strong>: C#.NET, ASP.NET MVC, Web API, ADO.NET</li>
+        <li><strong>Database</strong>: SQL Server, Entity Framework, LINQ</li>
+        <li><strong>UI Technologies</strong>: HTML, CSS, JavaScript, React JS, Bootstrap</li>
+      </ul>
+    </div>
+    <div class="soft-skills">
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>Teamwork</li>
+        <li>Communication</li>
+        <li>Problem Solving</li>
+      </ul>
+    </div>
+  </section>
 
-  <div class="soft-skills">
-    <h3>Soft Skills</h3>
-    <ul>
-      <li>Teamwork</li>
-      <li>Communication</li>
-      <li>Problem Solving</li>
-    </ul>
-  </div>
-
- 
-</section>
-
-
- <!-- Contact Information -->
- <div class="container" id="contact">
-  <header>
+  <!-- Contact -->
+  <div class="container" id="contact">
+    <header>
       <h1>Contact Me</h1>
       <p>Feel free to get in touch using the form below</p>
-  </header>
-
-  <div class="contact-form">
+    </header>
+    <div class="contact-form">
       <form id="contactForm">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required>
-
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Your Email" required>
-
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-
-          <button type="submit">Send Message</button>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
       </form>
+    </div>
   </div>
-</div>
- 
 
-<div class="social">
+  <!-- Social Media -->
+  <div class="social">
     <ul>
-        <li><a href="https://www.instagram.com/an.iket_mandage?igsh=ZHVpd2R1ajVkYXc4">Instagram <i class="fa-brands fa-instagram"></i></a></li>
-        <li><a href="https://github.com/asmandage">Github <i class="fa-brands fa-github"></i></a></li>
-        <li><a href="https://wa.me/qr/6IZFDIB4ZG5DJ1 ">Whatsapp <i class="fa-brands fa-whatsapp"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/aniket-mandage-653980271?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Linkedin <i class="fa-brands fa-linkedin-in"></i></a></li>
-
+      <li><a href="https://www.instagram.com/an.iket_mandage?igsh=ZHVpd2R1ajVkYXc4">Instagram <i class="fa-brands fa-instagram"></i></a></li>
+      <li><a href="https://github.com/asmandage">Github <i class="fa-brands fa-github"></i></a></li>
+      <li><a href="https://wa.me/qr/6IZFDIB4ZG5DJ1">Whatsapp <i class="fa-brands fa-whatsapp"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/aniket-mandage-653980271?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Linkedin <i class="fa-brands fa-linkedin-in"></i></a></li>
     </ul>
-</div>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <!-- About Section -->
-      <div class="footer-about">
-        <h3>About Me</h3>
-        <p>I am a passionate DOTNET developer dedicated to creating intuitive and engaging web experiences.</p>
-      </div>
-
-      <!-- Quick Links Section -->
-      <div class="footer-links">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#Sub-title">Home</a></li>
-          <li><a href="#pr">Projects</a></li>
-          <li><a href="#sk">Skills</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Social Media Section -->
-      <div class="footer-social">
-        <h3>Follow Me</h3>
-        <ul>
-          <li><a href="https://github.com/asmandage" target="_blank">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/aniket-mandage-653980271?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a></li>
-          <li><a href="https://t.me/Aniketmandage" target="_blank">Telegram</a></li>
-          <li><a href="https://wa.me/qr/6IZFDIB4ZG5DJ1 " target="_blank">Whatsapp</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Copyright Section -->
-    <div class="footer-bottom">
-      <p>&copy; 2025 Aniket Mandage. All rights reserved.</p>
-    </div>
   </div>
-</footer>
- 
-  <script src="src/JS/script.js"></script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <h3>About Me</h3>
+          <p>I am a passionate DOTNET developer dedicated to creating intuitive and engaging web experiences.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#Sub-title">Home</a></li>
+            <li><a href="#pr">Projects</a></li>
+            <li><a href="#sk">Skills</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h3>Follow Me</h3>
+          <ul>
+            <li><a href="https://github.com/asmandage" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/aniket-mandage-653980271?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a></li>
+            <li><a href="https://t.me/Aniketmandage" target="_blank">Telegram</a></li>
+            <li><a href="https://wa.me/qr/6IZFDIB4ZG5DJ1" target="_blank">Whatsapp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Aniket Mandage. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
