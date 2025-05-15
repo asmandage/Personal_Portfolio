@@ -123,7 +123,7 @@ nav a:hover {
     padding: 0px;
     transform: translate(-270px, 0);
   }
-  .social ul li {
+  .social ul li{
     display: block;
     margin: 5px;
     background: rgba(0, 0, 0, 0.36);
