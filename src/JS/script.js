@@ -1,51 +1,49 @@
 function toggleNavbar() {
-    var x = document.getElementById("navbar");
-    if (x.className === "navbar") {
-        x.className += " responsive";
-    } else {
-        x.className = "navbar";
-    }
+  var x = document.getElementById("navbar");
+  if (x.className === "navbar") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar";
+  }
 }
-//Hello text
+
+function closeNavbar() {
+  var x = document.getElementById("navbar");
+  x.className = "navbar";
+}
+
+// Hello text animation
 document.addEventListener("DOMContentLoaded", () => {
   const helloElement = document.getElementById("hello");
   const text = helloElement.textContent;
-  const targetColor = "#3498db"; // The color to change to
-  const originalColor = " #34495e"; // Original color
-  
-  // Split the text into individual characters wrapped in spans
-  helloElement.innerHTML = [...text].map(char => `<span>${char}</span>`).join("");
+  const targetColor = "#3498db";
+  const originalColor = "#fff"; // Adjusted to match Sub-title background
 
+  helloElement.innerHTML = [...text].map(char => `<span>${char}</span>`).join("");
   const spans = helloElement.querySelectorAll("span");
 
-  // Function to change the color of characters one by one
   function changeColor(index) {
     if (index < spans.length) {
-      spans[index].style.color = targetColor; // Change color to target
-      setTimeout(() => changeColor(index + 1), 200); // Delay for next character
+      spans[index].style.color = targetColor;
+      setTimeout(() => changeColor(index + 1), 200);
     } else {
-      // Reset colors after all characters are changed
-      setTimeout(() => resetColors(0), 1000); // Pause before resetting
+      setTimeout(() => resetColors(0), 1000);
     }
   }
 
-  // Function to reset the colors one by one
   function resetColors(index) {
     if (index < spans.length) {
-      spans[index].style.color = originalColor; // Reset color to original
-      setTimeout(() => resetColors(index + 1), 200); // Delay for next character
+      spans[index].style.color = originalColor;
+      setTimeout(() => resetColors(index + 1), 200);
     } else {
-      // Restart the color-changing effect
-      setTimeout(() => changeColor(0), 1000); // Pause before restarting
+      setTimeout(() => changeColor(0), 1000);
     }
   }
 
-  // Start the infinite animation
   changeColor(0);
 });
 
-
-//For Progress Circular
+// Skill Progress Circles
 document.querySelectorAll('.outer-circle').forEach((circle) => {
   const target = parseInt(circle.dataset.progress, 10);
   const counter = circle.querySelector('.counter');
@@ -64,26 +62,20 @@ document.querySelectorAll('.outer-circle').forEach((circle) => {
   updateCounter();
 });
 
-// for About ME 
-// Simple fade-in animation for sections when loaded
-document.addEventListener("DOMContentLoaded", function () {
+// About Section Fade-in
+document.addEventListener("DOMContentLoaded", () => {
   const aboutSection = document.querySelector("#about");
   aboutSection.classList.add("fade-in");
 });
 
-
-  //Contact Information
-
-  document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    alert('Thank you for reaching out! I will get back to you soon.');
-    this.reset();
+// Contact Form Submission
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  alert('Thank you for reaching out! I will get back to you soon.');
+  this.reset();
 });
 
-
-
-//  Footer
-
+// Footer Smooth Scrolling
 document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll(".footer-links a");
 
@@ -98,14 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
           top: targetElement.offsetTop,
           behavior: "smooth"
         });
+        closeNavbar(); // Close navbar on mobile after clicking
       }
     });
   });
 });
-
-
-
-  
-
-
-
