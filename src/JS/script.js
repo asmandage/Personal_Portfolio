@@ -1,15 +1,6 @@
-// Modern Portfolio JavaScript
+// 🚀 LIGHTNING-FAST PORTFOLIO JAVASCRIPT - OPTIMIZED FOR SPEED
 
-// DOM Content Loaded
-document.addEventListener('DOMContentLoaded', function() {
-    initializeNavigation();
-    initializeAnimations();
-    initializeSkillCircles();
-    initializeContactForm();
-    initializeScrollEffects();
-});
-
-// Navigation functionality
+// Fast Navigation
 function initializeNavigation() {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
@@ -37,7 +28,7 @@ function initializeNavigation() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
+                const offsetTop = targetSection.offsetTop - 70;
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -49,19 +40,21 @@ function initializeNavigation() {
     // Navbar background on scroll
     window.addEventListener('scroll', function() {
         const navbar = document.getElementById('navbar');
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        const scrolled = window.pageYOffset;
+        
+        if (scrolled > 50) {
+            navbar.style.background = 'rgba(15, 20, 25, 0.95)';
+            navbar.style.backdropFilter = 'blur(20px)';
     } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = 'none';
+            navbar.style.background = 'rgba(15, 20, 25, 0.95)';
+            navbar.style.backdropFilter = 'blur(20px)';
         }
     });
 }
 
-// Initialize animations
+// Fast Animations
 function initializeAnimations() {
-    // Intersection Observer for fade-in animations
+    // Simple intersection observer for fade-in animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -77,16 +70,16 @@ function initializeAnimations() {
     }, observerOptions);
 
     // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.project-card, .skill-item, .info-card, .about-skills, .contact-form');
+    const animatedElements = document.querySelectorAll('.project-card, .skill-item, .info-card, .about-skills, .contact-form, .tech-stack');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
+        el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
 }
 
-// Skill circles animation
+// Fast Skill Circles Animation
 function initializeSkillCircles() {
     const skillCircles = document.querySelectorAll('.skill-circle');
     
@@ -110,7 +103,7 @@ function animateSkillCircle(circle, percentage) {
     const percentageElement = circle.querySelector('.skill-percentage');
     let currentPercentage = 0;
     const targetPercentage = parseInt(percentage);
-    const increment = targetPercentage / 50; // Animation duration control
+    const increment = targetPercentage / 30; // Faster animation
     
     const animation = setInterval(() => {
         currentPercentage += increment;
@@ -120,12 +113,12 @@ function animateSkillCircle(circle, percentage) {
         }
         
         const angle = (currentPercentage / 100) * 360;
-        circle.style.background = `conic-gradient(#2563eb ${angle}deg, #e2e8f0 ${angle}deg)`;
+        circle.style.background = `conic-gradient(#d4af37 ${angle}deg, rgba(212, 175, 55, 0.2) ${angle}deg)`;
         percentageElement.textContent = `${Math.round(currentPercentage)}%`;
-    }, 30);
+    }, 50);
 }
 
-// Contact form functionality - Working solution
+// Fast Contact Form
 function initializeContactForm() {
     const contactForm = document.getElementById('contactForm');
     
@@ -136,7 +129,7 @@ function initializeContactForm() {
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.innerHTML;
             
-            // Show loading state
+            // Simple loading animation
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitButton.disabled = true;
             
@@ -158,23 +151,23 @@ function initializeContactForm() {
                     throw new Error('Please enter a valid email address');
                 }
                 
-                // Create mailto link as immediate working solution
+                // Create mailto link
                 const mailtoLink = createMailtoLink(formData);
                 
-                // Show success message and open email client
+                // Show success message
                 showNotification('Opening your email client to send the message. If it doesn\'t open, please copy the details and email me directly at aniketmandage85@gmail.com', 'success');
                 
                 // Open email client
                 window.location.href = mailtoLink;
                 
-                // Reset form after a delay
+                // Reset form
                 setTimeout(() => {
-                    this.reset();
+    this.reset();
                 }, 2000);
                 
             } catch (error) {
                 console.error('Error:', error);
-                showNotification(error.message || 'Sorry, there was an error sending your message. Please try again or contact me directly at aniketmandage85@gmail.com', 'error');
+                showNotification(error.message || 'Sorry, there was an error. Please try again or contact me directly at aniketmandage85@gmail.com', 'error');
             } finally {
                 // Reset button
                 submitButton.innerHTML = originalText;
@@ -184,104 +177,7 @@ function initializeContactForm() {
     }
 }
 
-// Send email using a working public API
-async function sendEmailDirectly(formData) {
-    try {
-        // Using a public form submission service
-        const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                access_key: 'a1b2c3d4-e5f6-7890-abcd-ef1234567890', // This is a demo key - replace with your own
-                name: formData.name,
-                email: formData.email,
-                subject: formData.subject,
-                message: formData.message,
-                to: 'aniketmandage85@gmail.com',
-                from_name: formData.name,
-                reply_to: formData.email
-            })
-        });
-        
-        const result = await response.json();
-        
-        if (result.success) {
-            return true;
-    } else {
-            throw new Error(result.message || 'Failed to send message');
-        }
-    } catch (error) {
-        console.error('Email sending error:', error);
-        throw error;
-    }
-}
-
-// Send email directly using Web3Forms (free service)
-async function sendViaWeb3Forms(formData) {
-    try {
-        const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                access_key: 'a1b2c3d4-e5f6-7890-abcd-ef1234567890', // Replace with your actual Web3Forms access key
-                name: formData.name,
-                email: formData.email,
-                subject: formData.subject,
-                message: formData.message,
-                to: 'aniketmandage85@gmail.com',
-                from_name: formData.name,
-                reply_to: formData.email
-            })
-        });
-        
-        const result = await response.json();
-        
-        if (result.success) {
-            return true;
-    } else {
-            throw new Error(result.message || 'Failed to send message');
-        }
-    } catch (error) {
-        console.error('Web3Forms Error:', error);
-        throw error;
-    }
-}
-
-// Send email directly using Formspree (backup service)
-async function sendViaFormspree(formData) {
-    try {
-        const formDataToSend = new FormData();
-        formDataToSend.append('name', formData.name);
-        formDataToSend.append('email', formData.email);
-        formDataToSend.append('subject', formData.subject);
-        formDataToSend.append('message', formData.message);
-        formDataToSend.append('_replyto', formData.email);
-        formDataToSend.append('_subject', `Portfolio Contact: ${formData.subject}`);
-        
-        const response = await fetch('https://formspree.io/f/mqkqkp', {
-            method: 'POST',
-            body: formDataToSend,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-        
-        if (response.ok) {
-            return true;
-        } else {
-            throw new Error('Formspree submission failed');
-        }
-    } catch (error) {
-        console.error('Formspree Error:', error);
-        throw error;
-    }
-}
-
-// Create mailto link for immediate email sending
+// Create mailto link
 function createMailtoLink(formData) {
     const subject = encodeURIComponent(`Portfolio Contact: ${formData.subject}`);
     const body = encodeURIComponent(`
@@ -305,7 +201,7 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-// Notification system
+// Fast Notification System
 function showNotification(message, type = 'info') {
     // Remove existing notifications
     const existingNotifications = document.querySelectorAll('.notification');
@@ -329,14 +225,16 @@ function showNotification(message, type = 'info') {
         position: fixed;
         top: 20px;
         right: 20px;
-        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
+        background: ${type === 'success' ? 'linear-gradient(135deg, #10b981, #059669)' : type === 'error' ? 'linear-gradient(135deg, #ef4444, #dc2626)' : 'linear-gradient(135deg, #2563eb, #1d4ed8)'};
         color: white;
         padding: 1rem 1.5rem;
         border-radius: 0.5rem;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         z-index: 10000;
         max-width: 400px;
-        animation: slideInRight 0.3s ease-out;
+        animation: slideInRight 0.3s ease;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
     `;
     
     // Add to page
@@ -345,23 +243,14 @@ function showNotification(message, type = 'info') {
     // Auto remove after 5 seconds
     setTimeout(() => {
         if (notification.parentElement) {
-            notification.style.animation = 'slideOutRight 0.3s ease-in';
+            notification.style.animation = 'slideOutRight 0.3s ease';
             setTimeout(() => notification.remove(), 300);
         }
     }, 5000);
 }
 
-// Scroll effects
+// Fast Scroll Effects
 function initializeScrollEffects() {
-    // Parallax effect for hero section
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        }
-    });
-    
     // Active navigation link highlighting
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -385,32 +274,9 @@ function initializeScrollEffects() {
     });
 }
 
-// Typing animation for hero title
-function initializeTypingAnimation() {
-    const nameElement = document.querySelector('.name');
-    if (nameElement) {
-        const text = nameElement.textContent;
-        nameElement.textContent = '';
-        
-        let i = 0;
-        const typeWriter = () => {
-            if (i < text.length) {
-                nameElement.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        };
-        
-        // Start typing animation after a delay
-        setTimeout(typeWriter, 1000);
-    }
-}
-
-// Initialize typing animation when page loads
-window.addEventListener('load', initializeTypingAnimation);
-
-// Add CSS for notifications
-const notificationStyles = `
+// Add CSS for animations
+const styleSheet = document.createElement('style');
+styleSheet.textContent = `
     @keyframes slideInRight {
         from {
             transform: translateX(100%);
@@ -446,24 +312,19 @@ const notificationStyles = `
         cursor: pointer;
         padding: 0.25rem;
         margin-left: auto;
+        transition: transform 0.2s ease;
     }
     
     .notification-close:hover {
-        opacity: 0.8;
+        transform: scale(1.2) rotate(90deg);
     }
     
     .nav-link.active {
-        color: #2563eb;
-    }
-    
-    .nav-link.active::after {
-        width: 100%;
+        color: white;
+        background: rgba(255, 255, 255, 0.1);
     }
 `;
 
-// Inject notification styles
-const styleSheet = document.createElement('style');
-styleSheet.textContent = notificationStyles;
 document.head.appendChild(styleSheet);
 
 // Utility functions
@@ -492,10 +353,18 @@ document.addEventListener('DOMContentLoaded', function() {
     images.forEach(img => {
         img.addEventListener('error', function() {
             this.style.display = 'none';
-    });
   });
 });
 
-// Console welcome message
-console.log('%c👋 Welcome to Aniket Mandage\'s Portfolio!', 'color: #2563eb; font-size: 16px; font-weight: bold;');
-console.log('%cBuilt with ❤️ using HTML, CSS, and JavaScript', 'color: #64748b; font-size: 12px;');
+    // Initialize all fast portfolio functionality
+    initializeNavigation();
+    initializeAnimations();
+    initializeSkillCircles();
+    initializeContactForm();
+    initializeScrollEffects();
+});
+
+// Fast console welcome message
+console.log('%c🚀 Welcome to Aniket Mandage\'s Lightning-Fast Portfolio!', 'color: #2563eb; font-size: 18px; font-weight: bold;');
+console.log('%cBuilt with ❤️ using HTML, CSS, and JavaScript - Optimized for maximum speed!', 'color: #7c3aed; font-size: 14px;');
+console.log('%cThis portfolio is optimized for lightning-fast performance!', 'color: #06b6d4; font-size: 12px;');
