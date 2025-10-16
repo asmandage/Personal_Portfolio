@@ -1,5 +1,35 @@
 // 🚀 LIGHTNING-FAST PORTFOLIO JAVASCRIPT - OPTIMIZED FOR SPEED
 
+// Modern Loader Control
+function initializeLoader() {
+    const loader = document.getElementById('loader');
+    
+    // Show loader initially
+    loader.style.display = 'flex';
+    
+    // Hide loader when page is fully loaded
+    window.addEventListener('load', function() {
+        // Add a small delay for better UX
+        setTimeout(() => {
+            loader.classList.add('hidden');
+            // Remove loader from DOM after animation
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        }, 1500); // 1.5 second loader display
+    });
+    
+    // Fallback: hide loader after 3 seconds regardless
+    setTimeout(() => {
+        if (loader && !loader.classList.contains('hidden')) {
+            loader.classList.add('hidden');
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        }
+    }, 3000);
+}
+
 // Fast Navigation
 function initializeNavigation() {
     const navToggle = document.getElementById('nav-toggle');
@@ -357,6 +387,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
     // Initialize all fast portfolio functionality
+    initializeLoader();
     initializeNavigation();
     initializeAnimations();
     initializeSkillCircles();
