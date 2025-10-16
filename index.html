@@ -3,108 +3,373 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aniket Mandage - Full Stack .NET Developer</title>
+    <title>Aniket Mandage - Full Stack Developer</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Modern Loader -->
-    <div id="loader" class="loader">
-        <div class="loader-container">
-            <div class="loader-logo">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
                 <span class="logo-text">AM</span>
             </div>
-            <div class="loader-spinner">
-                <div class="spinner-ring"></div>
-                <div class="spinner-ring"></div>
-                <div class="spinner-ring"></div>
+            <div class="preloader-spinner">
+                <div class="spinner"></div>
             </div>
-            <div class="loader-text">Loading Portfolio...</div>
+            <div class="preloader-text">Loading...</div>
         </div>
     </div>
 
     <!-- Navigation -->
-  <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
                 <span class="logo-text">AM</span>
             </div>
             <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
                 <a href="#contact" class="nav-link">Contact</a>
-</div>
+            </div>
             <div class="nav-toggle" id="nav-toggle">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-    </div>
-</div>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-container">
+        <div class="hero-background">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="greeting">Hey, I'm</span>
-                    <span class="name">Aniket Mandage</span>
-                </h1>
-                <p class="hero-description">
-                    A Full Stack .NET Developer building robust web applications and 
-                    user-friendly interfaces that drive business success.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-          </div>
-      </div>
-            <div class="hero-image">
-                <div class="profile-card">
-                    <div class="profile-image">
-                        <img src="public/image/My Photo.jpg" alt="Aniket Mandage" onerror="this.style.display='none'">
-    </div>
-                    <div class="profile-info">
-                        <h3>Aniket Mandage</h3>
-                        <p>Full Stack .NET Developer</p>
-          </div>
-      </div>
-    </div>
-  </div>
+                <div class="hero-text">
+                    <div class="hero-greeting">
+                        <span class="wave">👋</span>
+                        <span>Hello, I'm</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="title-line">Aniket</span>
+                        <span class="title-line">Mandage</span>
+                    </h1>
+                    <div class="hero-subtitle">
+                        <span class="typing-text">Full Stack Developer</span>
+                        <span class="cursor">|</span>
+                    </div>
+                    <p class="hero-description">
+                        I create amazing web experiences with modern technologies. 
+                        Passionate about building scalable applications and solving complex problems.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View My Work</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Get In Touch</span>
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">1+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <div class="image-background"></div>
+                        <img src="public/image/My Photo.jpg" alt="Aniket Mandage" class="profile-image" onerror="this.style.display='none'">
+                        <div class="image-overlay">
+                            <div class="tech-badge">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="tech-badge">
+                                <i class="fab fa-microsoft"></i>
+                                <span>ASP.NET Core</span>
+                            </div>
+                            <div class="tech-badge">
+                                <i class="fab fa-angular"></i>
+                                <span>Angular</span>
+                            </div>
+                            <div class="tech-badge">
+                                <i class="fab fa-microsoft"></i>
+                                <span>.NET</span>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-card">
+                        <h3>Who I Am</h3>
+                        <p>
+                            I'm a passionate Full Stack Developer with expertise in .NET technologies. 
+                            I love creating innovative solutions and turning ideas into reality through code.
+                        </p>
+                        <p>
+                            With a strong foundation in both frontend and backend development, I enjoy 
+                            building complete web applications that are both functional and user-friendly.
+                        </p>
+                    </div>
+                    <div class="about-card">
+                        <h3>My Journey</h3>
+                        <p>
+                            Started my journey in web development with a focus on .NET technologies. 
+                            I've worked on various projects ranging from simple websites to complex 
+                            enterprise applications.
+                        </p>
+                        <p>
+                            Currently pursuing continuous learning in modern web technologies and 
+                            always looking for new challenges to grow my skills.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-info">
+                    <div class="info-card">
+                        <div class="info-header">
+                            <i class="fas fa-user"></i>
+                            <h3>Personal Info</h3>
+                        </div>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <span class="label">Name:</span>
+                                <span class="value">Aniket Sanjay Mandage</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Role:</span>
+                                <span class="value">Full Stack Developer</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Location:</span>
+                                <span class="value">Ahmadnagar, Maharashtra</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Email:</span>
+                                <span class="value">aniketmandage85@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-header">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3>Education</h3>
+                        </div>
+                        <div class="education-list">
+                            <div class="education-item">
+                                <div class="education-year">2023</div>
+                                <div class="education-details">
+                                    <h4>Bachelor's Degree</h4>
+                                    <p>Dada Patil Mahavidyalay Karjat, SPPU (59.54%)</p>
+                                </div>
+                            </div>
+                            <div class="education-item">
+                                <div class="education-year">2021</div>
+                                <div class="education-details">
+                                    <h4>12th Grade</h4>
+                                    <p>Shri Amarnath Vidyalay Karjat, HSC Board (65.40%)</p>
+                                </div>
+                            </div>
+                            <div class="education-item">
+                                <div class="education-year">2019</div>
+                                <div class="education-details">
+                                    <h4>10th Grade</h4>
+                                    <p>New English School, Rehekuri, MH State Board (71.20%)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">What I work with</p>
+            </div>
+            <div class="skills-content">
+                <div class="skills-categories">
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-code"></i>
+                            <h3>Frontend</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML5</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="95%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-css3-alt"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">CSS3</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="90%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-js"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-angular"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Angular</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="70%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-server"></i>
+                            <h3>Backend</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-microsoft"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">C#.NET</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">ASP.NET</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">SQL Server</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="75%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-code-branch"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Web API</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
+            <div class="section-header">
+                <h2 class="section-title">My Projects</h2>
+                <p class="section-subtitle">Some of my recent work</p>
+            </div>
             <div class="projects-grid">
-                <!-- Calculator Project -->
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-calculator"></i>
-          </div>
+                        <div class="project-overlay">
+                            <a href="https://asmandage.github.io/calculator/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3>Calculator</h3>
+                        <h3>Calculator App</h3>
                         <p>A responsive calculator built with HTML, CSS, and JavaScript featuring clean design and smooth animations.</p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
-      </div>
-                        <a href="https://asmandage.github.io/calculator/" target="_blank" rel="noopener" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
-    </div>
-          </div>
-      
-                <!-- Resume Builder Project -->
+                        </div>
+                    </div>
+                </div>
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-file-alt"></i>
-          </div>
+                        <div class="project-overlay">
+                            <a href="https://asmandage.github.io/ResumeBuilderClone/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
                     <div class="project-content">
                         <h3>Resume Builder</h3>
                         <p>A comprehensive resume builder with templates, real-time preview, and PDF export functionality.</p>
@@ -113,18 +378,18 @@
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">C#.NET</span>
-      </div>
-                        <a href="https://asmandage.github.io/ResumeBuilderClone/" target="_blank" rel="noopener" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
-    </div>
-  </div>
-
-                <!-- Tic-Tac-Toe Game -->
+                        </div>
+                    </div>
+                </div>
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-gamepad"></i>
-          </div>
+                        <div class="project-overlay">
+                            <a href="https://asmandage.github.io/Tic-Tac-Toe-Web/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
                     <div class="project-content">
                         <h3>Tic-Tac-Toe Game</h3>
                         <p>An interactive two-player game with responsive design and real-time winner detection.</p>
@@ -132,18 +397,18 @@
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
-          </div>
-                        <a href="https://asmandage.github.io/Tic-Tac-Toe-Web/" target="_blank" rel="noopener" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
-      </div>
-    </div>
-
-                <!-- Rock Paper Scissors -->
+                        </div>
+                    </div>
+                </div>
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-hand-rock"></i>
-  </div>
+                        <div class="project-overlay">
+                            <a href="https://asmandage.github.io/RockPaperScissor/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
                     <div class="project-content">
                         <h3>Rock Paper Scissors</h3>
                         <p>An engaging game against the computer with sleek UI and real-time winner announcements.</p>
@@ -151,17 +416,17 @@
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
-          </div>
-                        <a href="https://asmandage.github.io/RockPaperScissor/" target="_blank" rel="noopener" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
-  </div>
-          </div>
-      
-                <!-- Hotel Management System -->
+                        </div>
+                    </div>
+                </div>
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-hotel"></i>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link disabled">
+                                <i class="fas fa-lock"></i>
+                            </a>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3>Hotel Management System</h3>
@@ -171,18 +436,18 @@
                             <span class="tech-tag">C#</span>
                             <span class="tech-tag">SQL Server</span>
                             <span class="tech-tag">ADO.NET</span>
-          </div>
-                        <a href="#" class="project-link disabled">
-                            <i class="fas fa-lock"></i> Private Project
-                        </a>
-      </div>
-    </div>
-
-                <!-- Personal Portfolio -->
+                        </div>
+                    </div>
+                </div>
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-user"></i>
-  </div>
+                        <div class="project-overlay">
+                            <a href="https://asmandage.github.io/Personal_Portfolio/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
                     <div class="project-content">
                         <h3>Personal Portfolio</h3>
                         <p>A responsive and modern portfolio website showcasing skills, projects, and achievements.</p>
@@ -190,185 +455,81 @@
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
-          </div>
-                        <a href="https://asmandage.github.io/Personal_Portfolio/" target="_blank" rel="noopener" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
-          </div>
-      </div>
-    </div>
-  </div>
-    </section>
-  
-  <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-content">
-                <div class="tech-stack">
-                    <h3>.NET Full Stack Technologies</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">C#.NET</span>
-                        <span class="tech-tag">ASP.NET</span>
-                        <span class="tech-tag">MVC</span>
-                        <span class="tech-tag">ADO.NET</span>
-                        <span class="tech-tag">Web API</span>
-                        <span class="tech-tag">LINQ</span>
-                        <span class="tech-tag">Entity Framework</span>
-                        <span class="tech-tag">SQL Server</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Bootstrap</span>
-                        <span class="tech-tag">Angular</span>
-            </div>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-circle" data-percentage="90">
-                                <div class="skill-percentage">90%</div>
-                            </div>
-                            <h3>HTML/CSS</h3>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-circle" data-percentage="85">
-                                <div class="skill-percentage">85%</div>
-                            </div>
-                            <h3>ASP.NET</h3>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-circle" data-percentage="75">
-                                <div class="skill-percentage">75%</div>
-                            </div>
-                            <h3>C#.NET</h3>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-circle" data-percentage="80">
-                                <div class="skill-percentage">80%</div>
-                            </div>
-                            <h3>ADO.NET</h3>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-circle" data-percentage="60">
-                                <div class="skill-percentage">60%</div>
-          </div>
-                            <h3>SQL Server</h3>
-        </div>
-                        <div class="skill-item">
-                            <div class="skill-circle" data-percentage="70">
-                                <div class="skill-percentage">70%</div>
-      </div>
-                            <h3>Angular</h3>
-            </div>
-                        <div class="skill-item">
-                            <div class="skill-circle" data-percentage="80">
-                                <div class="skill-percentage">80%</div>
-                            </div>
-                            <h3>ASP.NET Web API</h3>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-circle" data-percentage="70">
-                                <div class="skill-percentage">70%</div>
-                            </div>
-                            <h3>ASP.NET Core</h3>
-                        </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-info">
-                    <div class="info-card">
-                        <h3>Personal Information</h3>
-                        <div class="info-item">
-                            <strong>Name:</strong> Aniket Sanjay Mandage
-                        </div>
-                        <div class="info-item">
-                            <strong>Role:</strong> Full Stack .NET Developer
-                        </div>
-                        <div class="info-item">
-                            <strong>Location:</strong> Ahmadnagar, Maharashtra
-  </div>
-</div>
-                    <div class="info-card">
-                        <h3>Education</h3>
-                        <div class="education-item">
-                            <strong>Bachelor's Degree:</strong> Dada Patil Mahavidyalay Karjat, SPPU (59.54%)
-                        </div>
-                        <div class="education-item">
-                            <strong>12th Grade:</strong> Shri Amarnath Vidyalay Karjat, HSC Board (65.40%)
-                        </div>
-                        <div class="education-item">
-                            <strong>10th Grade:</strong> New English School, Rehekuri, MH State Board (71.20%)
-                        </div>
-                        <div class="education-item">
-                            <strong>Professional Training:</strong> .NET Fullstack Course from Naresh IT Hyderabad
-    </div>
-    </div>
-  </div>
-                <div class="about-skills">
-    <h3>Technical Skills</h3>
-                    <div class="skills-categories">
-                        <div class="skill-category">
-                            <h4>.NET Technologies</h4>
-                            <p>C#.NET, ASP.NET MVC, Web API, ADO.NET, Entity Framework</p>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Database</h4>
-                            <p>SQL Server, MySQL, LINQ, Database Design</p>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Frontend</h4>
-                            <p>HTML5, CSS3, JavaScript, Bootstrap, Responsive Design</p>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Soft Skills</h4>
-                            <p>Teamwork, Communication, Problem Solving, Time Management</p>
                         </div>
                     </div>
                 </div>
-  </div>
-  </div>
-</section>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together</p>
+            </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out!</p>
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <span>aniketmandage85@gmail.com</span>
+                    <div class="contact-card">
+                        <h3>Let's Connect</h3>
+                        <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out!</p>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">Email</span>
+                                    <span class="method-value">aniketmandage85@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">Location</span>
+                                    <span class="method-value">Ahmadnagar, Maharashtra</span>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">Response Time</span>
+                                    <span class="method-value">Within 24 hours</span>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">Availability</span>
+                                    <span class="method-value">Open for projects</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="contact-method">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Ahmadnagar, Maharashtra</span>
+                        <div class="social-links">
+                            <a href="https://github.com/asmandage" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/aniket-mandage-653980271" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.instagram.com/an.iket_mandage" target="_blank" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/qr/6IZFDIB4ZG5DJ1" target="_blank" class="social-link">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
                         </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/asmandage" target="_blank" rel="noopener" class="social-link" title="GitHub Profile">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/aniket-mandage-653980271" target="_blank" rel="noopener" class="social-link" title="LinkedIn Profile">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.instagram.com/an.iket_mandage" target="_blank" rel="noopener" class="social-link" title="Instagram Profile">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://wa.me/qr/6IZFDIB4ZG5DJ1" target="_blank" rel="noopener" class="social-link" title="WhatsApp Contact">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
                     </div>
                 </div>
-  <div class="contact-form">
-      <form id="contactForm">
+                <div class="contact-form">
+                    <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -386,48 +547,51 @@
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i> Send Message
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
                         </button>
-      </form>
-  </div>
-</div>
-</div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-                <div class="footer-section">
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
                     <h3>Aniket Mandage</h3>
-                    <p>Full Stack .NET Developer passionate about creating innovative web solutions.</p>
-      </div>
-                <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#skills">Skills</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-                <div class="footer-section">
-                    <h3>Follow Me</h3>
-      <div class="footer-social">
-                        <a href="https://github.com/asmandage" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/aniket-mandage-653980271" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/an.iket_mandage" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/qr/6IZFDIB4ZG5DJ1" target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Aniket Mandage. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
- 
-  <script src="src/JS/script.js"></script>
+                    <p>Full Stack Developer passionate about creating innovative web solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/asmandage" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/aniket-mandage-653980271" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/an.iket_mandage" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/qr/6IZFDIB4ZG5DJ1" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aniket Mandage. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/JS/script.js"></script>
 </body>
 </html>
