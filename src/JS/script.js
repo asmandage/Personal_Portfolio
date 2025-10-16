@@ -29,11 +29,29 @@ function initializeNavigation() {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
+    const navbar = document.getElementById('navbar');
 
     // Mobile menu toggle
-    navToggle.addEventListener('click', function() {
+    navToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
         navMenu.classList.toggle('active');
         navToggle.classList.toggle('active');
+        
+        // Prevent body scroll when menu is open
+        if (navMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     });
 
     // Close mobile menu when clicking on links
@@ -41,6 +59,7 @@ function initializeNavigation() {
         link.addEventListener('click', function() {
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
+            document.body.style.overflow = '';
         });
     });
 
@@ -61,17 +80,36 @@ function initializeNavigation() {
         });
     });
 
-    // Navbar background on scroll
-    window.addEventListener('scroll', function() {
-        const navbar = document.getElementById('navbar');
+    // Navbar background on scroll with throttling
+    let ticking = false;
+    function updateNavbar() {
         const scrolled = window.pageYOffset;
         
         if (scrolled > 50) {
             navbar.style.background = 'rgba(255, 255, 255, 0.95)';
             navbar.style.backdropFilter = 'blur(10px)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
         } else {
             navbar.style.background = 'rgba(255, 255, 255, 0.95)';
             navbar.style.backdropFilter = 'blur(10px)';
+            navbar.style.boxShadow = 'none';
+        }
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(updateNavbar);
+            ticking = true;
+        }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            document.body.style.overflow = '';
         }
     });
 }
@@ -417,6 +455,63 @@ function initializeRevealAnimations() {
     });
 }
 
+// Touch and Mobile Optimizations
+function initializeTouchOptimizations() {
+    // Add touch class to body for touch-specific styles
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+        document.body.classList.add('touch-device');
+    }
+
+    // Prevent zoom on double tap for buttons
+    const buttons = document.querySelectorAll('.btn, .nav-link, .social-link');
+    buttons.forEach(button => {
+        button.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            this.click();
+        });
+    });
+
+    // Improve touch scrolling
+    document.body.style.webkitOverflowScrolling = 'touch';
+    
+    // Prevent pull-to-refresh on mobile
+    document.addEventListener('touchstart', function(e) {
+        if (e.touches.length !== 1) return;
+        const touch = e.touches[0];
+        if (touch.clientY > 0) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+}
+
+// Performance optimizations
+function initializePerformanceOptimizations() {
+    // Lazy load images
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                observer.unobserve(img);
+            }
+        });
+    });
+
+    images.forEach(img => imageObserver.observe(img));
+
+    // Debounce resize events
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+            // Trigger any resize-dependent functions here
+            window.dispatchEvent(new Event('optimizedResize'));
+        }, 250);
+    });
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Error handling for images
@@ -437,6 +532,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeContactForm();
     initializeParallax();
     initializeRevealAnimations();
+    initializeTouchOptimizations();
+    initializePerformanceOptimizations();
 });
 
 // Console welcome message
