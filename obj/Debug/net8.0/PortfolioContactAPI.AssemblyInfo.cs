@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PortfolioContactAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13f818a9235de6e6affd932685e8ebfb3c171630")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0eb7e441e787744fb017e7cbda4e6d282edb8fbb")]
 [assembly: System.Reflection.AssemblyProductAttribute("PortfolioContactAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PortfolioContactAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
