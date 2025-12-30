@@ -153,7 +153,7 @@ function initializeScrollAnimations() {
                     const width = entry.target.getAttribute('data-width');
                     setTimeout(() => {
                         entry.target.style.width = width;
-                    }, 100);
+                    }, width);
                 }
             }
         });
@@ -452,7 +452,87 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
     initializeTypingAnimation();
     initializeScrollAnimations();
-    initializeSkillProgress();
+    initializeCircularProgress();
+    initializeActiveNavigation();
+    initializeContactForm();
+    initializeRevealAnimations();
+    initializeTouchOptimizations();
+});
+
+// Fallback for older browsers
+if (window.requestAnimationFrame === undefined) {
+    window.requestAnimationFrame = function(callback) {
+        return setTimeout(callback, 16);
+    };
+}
+
+// Circular Progress Animation
+function initializeCircularProgress() {
+    const progressCards = document.querySelectorAll('.circular-progress');
+    
+    const progressObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progressCard = entry.target;
+                const percent = progressCard.getAttribute('data-percent');
+                const fill = progressCard.querySelector('.progress-ring-fill');
+                const percentText = progressCard.querySelector('.progress-percent');
+                
+                if (fill) {
+                    const radius = 54;
+                    const circumference = 2 * Math.PI * radius;
+                    const offset = circumference - (percent / 100) * circumference;
+                    
+                    // Set the stroke-dasharray and stroke-dashoffset
+                    fill.style.strokeDasharray = circumference;
+                    fill.style.strokeDashoffset = circumference;
+                    
+                    // Animate to the correct position
+                    setTimeout(() => {
+                        fill.style.strokeDashoffset = offset;
+                    }, 100);
+                    
+                    // Animate percentage count
+                    if (percentText) {
+                        let currentPercent = 0;
+                        const increment = percent / 50;
+                        const interval = setInterval(() => {
+                            currentPercent += increment;
+                            if (currentPercent >= percent) {
+                                currentPercent = percent;
+                                clearInterval(interval);
+                            }
+                            percentText.textContent = Math.round(currentPercent) + '%';
+                        }, 20);
+                    }
+                }
+                
+                progressObserver.unobserve(progressCard);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    // Observe all progress cards
+    progressCards.forEach(card => {
+        progressObserver.observe(card);
+    });
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Error handling for images
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.addEventListener('error', function() {
+            this.style.display = 'none';
+        });
+    });
+
+    // Initialize all functionality
+    initializeNavigation();
+    initializeTypingAnimation();
+    initializeScrollAnimations();
+    initializeCircularProgress(); // Updated this line
     initializeActiveNavigation();
     initializeContactForm();
     initializeRevealAnimations();

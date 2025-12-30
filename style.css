@@ -556,6 +556,7 @@ section {
     color: var(--text-secondary);
 }
 
+/* FIXED: Education List Styles */
 .education-list {
     display: flex;
     flex-direction: column;
@@ -567,6 +568,13 @@ section {
     gap: var(--spacing-lg);
     align-items: flex-start;
     flex-wrap: wrap;
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.education-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 .education-year {
@@ -576,8 +584,14 @@ section {
     border-radius: var(--border-radius);
     font-weight: 700;
     font-size: var(--font-size-sm);
-    min-width: 60px;
+    min-width: 80px;
     text-align: center;
+    flex-shrink: 0;
+}
+
+.education-details {
+    flex: 1;
+    min-width: 200px;
 }
 
 .education-details h4 {
@@ -590,9 +604,10 @@ section {
 .education-details p {
     color: var(--text-secondary);
     font-size: var(--font-size-sm);
+    line-height: 1.5;
 }
 
-/* Skills Section */
+/* Skills Section - Modern Circular Progress */
 .skills-content {
     max-width: 1000px;
     margin: 0 auto;
@@ -623,6 +638,8 @@ section {
     align-items: center;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid rgba(99, 102, 241, 0.1);
 }
 
 .category-header i {
@@ -636,60 +653,237 @@ section {
     color: var(--text-primary);
 }
 
-.skill-items {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
+/* Circular Progress Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
 }
 
-.skill-item {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-lg);
-}
-
-.skill-icon {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+.circular-progress-card {
+    text-align: center;
+    padding: var(--spacing-lg);
     border-radius: var(--border-radius);
+    background: var(--bg-secondary);
+    transition: all 0.3s ease;
+}
+
+.circular-progress-card:hover {
+    transform: translateY(-5px);
+    background: var(--bg-card);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.circular-progress {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto var(--spacing-md);
+}
+
+.progress-circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.progress-ring-bg {
+    fill: none;
+    stroke: #f1f5f9;
+    stroke-width: 8;
+}
+
+.progress-ring-fill {
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 339.292;
+    stroke-dashoffset: 339.292;
+    transition: stroke-dashoffset 1.5s ease;
+    filter: drop-shadow(0 4px 8px rgba(99, 102, 241, 0.3));
+}
+
+.progress-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-white);
-    font-size: var(--font-size-xl);
-    flex-shrink: 0;
 }
 
-.skill-info {
-    flex: 1;
+.progress-percent {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--text-primary);
 }
 
 .skill-name {
+    font-size: var(--font-size-base);
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: var(--spacing-sm);
-    display: block;
 }
 
-.skill-bar {
-    width: 100%;
-    height: 8px;
-    background: var(--border-color);
-    border-radius: 4px;
-    overflow: hidden;
+.skill-icon {
+    font-size: var(--font-size-2xl);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    display: inline-block;
+    padding: var(--spacing-sm);
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-sm);
 }
 
-.skill-progress {
-    height: 100%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 4px;
-    width: 0;
-    transition: width 1s ease;
-    position: relative;
-    overflow: hidden;
+/* Different colors for different skills */
+.circular-progress-card:nth-child(1) .progress-ring-fill {
+    stroke: #e34c26; /* HTML5 orange */
 }
 
+.circular-progress-card:nth-child(1) .skill-icon {
+    color: #e34c26;
+    background: rgba(227, 76, 38, 0.1);
+}
+
+.circular-progress-card:nth-child(2) .progress-ring-fill {
+    stroke: #264de4; /* CSS3 blue */
+}
+
+.circular-progress-card:nth-child(2) .skill-icon {
+    color: #264de4;
+    background: rgba(38, 77, 228, 0.1);
+}
+
+.circular-progress-card:nth-child(3) .progress-ring-fill {
+    stroke: #f0db4f; /* JavaScript yellow */
+}
+
+.circular-progress-card:nth-child(3) .skill-icon {
+    color: #f0db4f;
+    background: rgba(240, 219, 79, 0.1);
+}
+
+.circular-progress-card:nth-child(4) .progress-ring-fill {
+    stroke: #dd0031; /* Angular red */
+}
+
+.circular-progress-card:nth-child(4) .skill-icon {
+    color: #dd0031;
+    background: rgba(221, 0, 49, 0.1);
+}
+
+/* Backend colors */
+.circular-progress-card:nth-child(5) .progress-ring-fill {
+    stroke: #239120; /* C# green */
+}
+
+.circular-progress-card:nth-child(5) .skill-icon {
+    color: #239120;
+    background: rgba(35, 145, 32, 0.1);
+}
+
+.circular-progress-card:nth-child(6) .progress-ring-fill {
+    stroke: #512bd4; /* ASP.NET purple */
+}
+
+.circular-progress-card:nth-child(6) .skill-icon {
+    color: #512bd4;
+    background: rgba(81, 43, 212, 0.1);
+}
+
+.circular-progress-card:nth-child(7) .progress-ring-fill {
+    stroke: #cc2927; /* SQL Server red */
+}
+
+.circular-progress-card:nth-child(7) .skill-icon {
+    color: #cc2927;
+    background: rgba(204, 41, 39, 0.1);
+}
+
+.circular-progress-card:nth-child(8) .progress-ring-fill {
+    stroke: #68217a; /* Web API purple */
+}
+
+.circular-progress-card:nth-child(8) .skill-icon {
+    color: #68217a;
+    background: rgba(104, 33, 122, 0.1);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - SKILLS
+   ======================================== */
+
+/* Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+    .skills-categories {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+    
+    .circular-progress-card {
+        padding: var(--spacing-md);
+    }
+    
+    .circular-progress {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .progress-percent {
+        font-size: var(--font-size-base);
+    }
+    
+    .skill-name {
+        font-size: var(--font-size-sm);
+    }
+    
+    .skill-icon {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-lg);
+    }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+    
+    .circular-progress {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+/* Desktop (1024px and above) */
+@media (min-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xl);
+    }
+}
 /* Projects Section */
 .projects {
     background: var(--bg-secondary);
@@ -1158,6 +1352,7 @@ section {
     .tech-badge {
         font-size: var(--font-size-xs);
         padding: var(--spacing-xs) var(--spacing-sm);
+        color:var(--primary-color);
     }
     
     .tech-badge:nth-child(1) {
@@ -1210,6 +1405,26 @@ section {
     
     .footer-social {
         justify-content: center;
+    }
+    
+    /* Mobile skill items */
+    .skill-item {
+        gap: var(--spacing-md);
+    }
+    
+    .skill-icon {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-lg);
+    }
+    
+    /* Mobile education items */
+    .education-item {
+        gap: var(--spacing-md);
+    }
+    
+    .education-year {
+        min-width: 60px;
     }
 }
 
