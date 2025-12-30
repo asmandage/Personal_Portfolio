@@ -1,29 +1,4 @@
-
 // 🚀 MODERN PORTFOLIO JAVASCRIPT - FRESH DESIGN
-
-// Preloader
-function initializePreloader() {
-    const preloader = document.getElementById('preloader');
-    
-    window.addEventListener('load', function() {
-        setTimeout(() => {
-            preloader.classList.add('hidden');
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500);
-        }, 1500);
-    });
-    
-    // Fallback
-    setTimeout(() => {
-        if (preloader && !preloader.classList.contains('hidden')) {
-            preloader.classList.add('hidden');
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500);
-        }
-    }, 3000);
-}
 
 // Navigation
 function initializeNavigation() {
@@ -33,22 +8,24 @@ function initializeNavigation() {
     const navbar = document.getElementById('navbar');
 
     // Mobile menu toggle
-    navToggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
-        
-        // Prevent body scroll when menu is open
-        if (navMenu.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-    });
+    if (navToggle) {
+        navToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+    }
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
-        if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+        if (navMenu && navToggle && !navMenu.contains(e.target) && !navToggle.contains(e.target)) {
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
             document.body.style.overflow = '';
@@ -58,8 +35,8 @@ function initializeNavigation() {
     // Close mobile menu when clicking on links
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
+            if (navMenu) navMenu.classList.remove('active');
+            if (navToggle) navToggle.classList.remove('active');
             document.body.style.overflow = '';
         });
     });
@@ -84,6 +61,8 @@ function initializeNavigation() {
     // Navbar background on scroll with throttling
     let ticking = false;
     function updateNavbar() {
+        if (!navbar) return;
+        
         const scrolled = window.pageYOffset;
         
         if (scrolled > 50) {
@@ -107,7 +86,7 @@ function initializeNavigation() {
 
     // Handle window resize
     window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 767 && navMenu && navToggle) {
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
             document.body.style.overflow = '';
@@ -141,18 +120,19 @@ function initializeTypingAnimation() {
         let typeSpeed = isDeleting ? 50 : 100;
         
         if (!isDeleting && charIndex === currentText.length) {
-            typeSpeed = 2000;
+            typeSpeed = 1500;
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             textIndex = (textIndex + 1) % texts.length;
-            typeSpeed = 500;
+            typeSpeed = 300;
         }
         
         setTimeout(typeText, typeSpeed);
     }
     
-    typeText();
+    // Start typing animation
+    setTimeout(typeText, 500);
 }
 
 // Scroll Animations
@@ -173,7 +153,7 @@ function initializeScrollAnimations() {
                     const width = entry.target.getAttribute('data-width');
                     setTimeout(() => {
                         entry.target.style.width = width;
-                    }, 200);
+                    }, 100);
                 }
             }
         });
@@ -186,8 +166,8 @@ function initializeScrollAnimations() {
     
     animatedElements.forEach(el => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
         observer.observe(el);
     });
 }
@@ -202,7 +182,7 @@ function initializeSkillProgress() {
                     const width = progress.getAttribute('data-width');
                     setTimeout(() => {
                         progress.style.width = width;
-                    }, index * 200); // Stagger animation
+                    }, index * 100);
                 });
                 skillObserver.unobserve(entry.target);
             }
@@ -220,6 +200,8 @@ function initializeSkillProgress() {
 function initializeActiveNavigation() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
+    
+    if (sections.length === 0 || navLinks.length === 0) return;
     
     window.addEventListener('scroll', function() {
         let current = '';
@@ -284,7 +266,7 @@ function initializeContactForm() {
                 // Reset form
                 setTimeout(() => {
                     this.reset();
-                }, 2000);
+                }, 1000);
                 
             } catch (error) {
                 console.error('Error:', error);
@@ -301,8 +283,7 @@ function initializeContactForm() {
 // Create mailto link
 function createMailtoLink(formData) {
     const subject = encodeURIComponent(`Portfolio Contact: ${formData.subject}`);
-    const body = encodeURIComponent(`
-Name: ${formData.name}
+    const body = encodeURIComponent(`Name: ${formData.name}
 Email: ${formData.email}
 Subject: ${formData.subject}
 
@@ -310,8 +291,7 @@ Message:
 ${formData.message}
 
 ---
-This message was sent from your portfolio contact form.
-    `);
+This message was sent from your portfolio contact form.`);
     
     return `mailto:aniketmandage85@gmail.com?subject=${subject}&body=${body}`;
 }
@@ -361,13 +341,13 @@ function showNotification(message, type = 'info') {
     // Add to page
     document.body.appendChild(notification);
     
-    // Auto remove after 5 seconds
+    // Auto remove after 4 seconds
     setTimeout(() => {
         if (notification.parentElement) {
             notification.style.animation = 'slideOutRight 0.3s ease';
             setTimeout(() => notification.remove(), 300);
         }
-    }, 5000);
+    }, 4000);
 }
 
 // Add CSS for animations
@@ -420,21 +400,6 @@ styleSheet.textContent = `
 
 document.head.appendChild(styleSheet);
 
-// Parallax Effect for Hero Shapes
-function initializeParallax() {
-    const shapes = document.querySelectorAll('.shape');
-    
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
-        
-        shapes.forEach((shape, index) => {
-            const speed = (index + 1) * 0.1;
-            shape.style.transform = `translateY(${rate * speed}px)`;
-        });
-    });
-}
-
 // Smooth reveal animations
 function initializeRevealAnimations() {
     const revealElements = document.querySelectorAll('.hero-text, .hero-image, .section-header');
@@ -450,8 +415,8 @@ function initializeRevealAnimations() {
     
     revealElements.forEach(el => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         revealObserver.observe(el);
     });
 }
@@ -469,47 +434,7 @@ function initializeTouchOptimizations() {
         button.addEventListener('touchend', function(e) {
             e.preventDefault();
             this.click();
-        });
-    });
-
-    // Improve touch scrolling
-    document.body.style.webkitOverflowScrolling = 'touch';
-    
-    // Prevent pull-to-refresh on mobile
-    document.addEventListener('touchstart', function(e) {
-        if (e.touches.length !== 1) return;
-        const touch = e.touches[0];
-        if (touch.clientY > 0) {
-            e.preventDefault();
-        }
-    }, { passive: false });
-}
-
-// Performance optimizations
-function initializePerformanceOptimizations() {
-    // Lazy load images
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-                observer.unobserve(img);
-            }
-        });
-    });
-
-    images.forEach(img => imageObserver.observe(img));
-
-    // Debounce resize events
-    let resizeTimeout;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function() {
-            // Trigger any resize-dependent functions here
-            window.dispatchEvent(new Event('optimizedResize'));
-        }, 250);
+        }, { passive: false });
     });
 }
 
@@ -524,20 +449,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Initialize all functionality
-    initializePreloader();
     initializeNavigation();
     initializeTypingAnimation();
     initializeScrollAnimations();
     initializeSkillProgress();
     initializeActiveNavigation();
     initializeContactForm();
-    initializeParallax();
     initializeRevealAnimations();
     initializeTouchOptimizations();
-    initializePerformanceOptimizations();
 });
 
-// Console welcome message
-console.log('%c🚀 Welcome to Aniket Mandage\'s Modern Portfolio!', 'color: #6366f1; font-size: 18px; font-weight: bold;');
-console.log('%cBuilt with ❤️ using modern HTML, CSS, and JavaScript', 'color: #8b5cf6; font-size: 14px;');
-console.log('%cThis portfolio features a fresh, modern design!', 'color: #06b6d4; font-size: 12px;');
+// Fallback for older browsers
+if (window.requestAnimationFrame === undefined) {
+    window.requestAnimationFrame = function(callback) {
+        return setTimeout(callback, 16);
+    };
+}
