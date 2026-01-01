@@ -372,7 +372,7 @@ body {
     gap: var(--spacing-xs);
     font-size: var(--font-size-sm);
     font-weight: 600;
-    color: var(--text-primary);
+    color: black;
     animation: float 3s ease-in-out infinite;
     z-index: 10;
 }
